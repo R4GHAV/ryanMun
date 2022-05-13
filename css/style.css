@@ -85,7 +85,16 @@ a:hover {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 80%;
+  animation: sizeChange 3s linear forwards;
+}
+
+@keyframes sizeChange {
+  0%   {background-size: 80%;}
+  25%  {background-size: 85%;}
+  50%  {background-size: 90%;}
+  75%  {background-size: 95%;}
+  100% {background-size: 100%;}
 }
 
 .site-navbar-wrap {
@@ -518,7 +527,7 @@ a:hover {
   color: #fff;
 }
 .sticky-wrapper.is-sticky .site-navbar {
-  background-color: #515151;
+  background-color: #007bff;
   /* background-image: url("/images/Untitled\ design\ \(6\).png");
   background-repeat: no-repeat;
   background-size: 100% 100%; */
@@ -866,7 +875,7 @@ a {
 
 /* Animation */
 .anim-typewriter {
-  animation: typewriter 3s steps(44) 1s 1 normal both,
+  animation: typewriter 2s steps(44) 1s 1 normal both,
     blinkTextCursor 500ms steps(44) infinite normal;
 }
 @keyframes typewriter {
@@ -1086,7 +1095,8 @@ a {
 }
 
 .img-comm {
-  width: 400px !important;
+  width: 100% !important;
+  height: 100%;
 }
 
 @keyframes bg {
