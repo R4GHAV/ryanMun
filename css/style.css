@@ -81,6 +81,11 @@ a:hover {
   align-items: center;
   justify-content: center;
   color: white;
+  min-height: 1000px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .site-navbar-wrap {
@@ -841,6 +846,13 @@ a {
   padding: 30px 0;
 }
 
+@media only screen and (max-width: 600px) {
+ 
+.greet-text {
+  font-size: 3vw !important;
+}
+}
+
 .line-1 {
   width: 30vw;
   margin: 0 auto;
@@ -1009,27 +1021,38 @@ a {
 }
 
 .profile img {
-  width: 68px;
-  height: 68px;
+  width: 150px !important;
+  height: 150px !important;
   border-radius: 50%;
 }
+
+.scr-crd {
+  height: 190px;
+  overflow: scroll;
+}
+
 .second {
   border-left: 2px dotted lightgrey;
   border-right: 2px dotted lightgrey;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .second {
-    border: none;
-    border-top: 2px dotted lightgrey;
+    border: none !important;
+    border-top: 2px dotted lightgrey !important;
     margin-top: 25px;
   }
   .third {
-    border-top: 2px dotted lightgrey;
+    border-top: 2px dotted lightgrey !important;
     margin-top: 25px;
   }
   .icon {
     margin-top: 20px;
     top: 0;
+  }
+
+  .scr-crd {
+    height: 150px;
+    overflow: scroll;
   }
 }
 .fa-quote-left:before {
@@ -1062,12 +1085,79 @@ a {
   padding-bottom: 50px;
 }
 
-
-.scr-crd {
-  height: 190px;
-  overflow: scroll;
-}
-
 .img-comm {
   width: 400px !important;
+}
+
+@keyframes bg {
+  0% {
+      background-size:    0 3px,
+                          3px 0,
+                          0 3px,
+                          3px 0;
+  }
+  25% {
+      background-size:    100% 3px,
+                          3px 0,
+                          0 3px,
+                          3px 0;
+  }
+  50% {
+      background-size:    100% 3px,
+                          3px 100%,
+                          0 3px,
+                          3px 0;
+  }
+  75% {
+      background-size:    100% 3px,
+                          3px 100%,
+                          100% 3px,
+                          3px 0;
+  }
+  100% {
+      background-size:    100% 3px,
+                          3px 100%,
+                          100% 3px,
+                          3px 100%;
+  }
+}
+
+.greeting {
+  /* width: 25%; */
+  margin: 2rem auto;
+  padding: 2em;
+  
+  background-repeat: no-repeat;
+  background-image:   linear-gradient(to right, #C9C9C9 100%, #C9C9C9 100%),
+                      linear-gradient(to bottom, #C9C9C9 100%, #C9C9C9 100%),
+                      linear-gradient(to right, #C9C9C9 100%, #C9C9C9 100%),
+                      linear-gradient(to bottom, #C9C9C9 100%, #C9C9C9 100%);
+  background-size:    100% 3px,
+                      3px 100%,
+                      100% 3px,
+                      3px 100%;
+  background-position:    0 0,
+                          100% 0,
+                          100% 100%,
+                          0 100%;
+  animation: bg 1.25s cubic-bezier(0.19, 1, 0.22, 1) 1;
+  animation-play-state: paused;
+}
+
+.greeting:hover {
+  animation-play-state: running;
+}
+
+.gree-img {
+  width: 40% !important;
+  float: left;
+  margin: 0 10px;
+}
+
+@media screen and (max-width: 726px) {
+  .gree-img {
+    width: 100% !important;
+    float: none;
+    margin: 15px auto;
+  }
 }
